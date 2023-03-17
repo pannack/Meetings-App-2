@@ -1,0 +1,82 @@
+.registerPage,
+.loginPage {
+  background-image: url("/images/background-login-registration.jfif");
+  background-size: cover;
+}
+.registerPage .container,
+.loginPage .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.registerPage .container #form-group,
+.loginPage .container #form-group {
+  width: 18em;
+  margin-top: 2em;
+  border: 0.1875em solid rgb(115, 200, 213);
+  border-radius: 0.5em;
+  padding: 0%;
+  background-color: rgb(255, 255, 255);
+}
+.registerPage .container #form-group h1,
+.loginPage .container #form-group h1 {
+  background-color: rgb(115, 200, 213);
+  padding: 0.5em;
+  margin: 0;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  text-align: center;
+}
+.registerPage .container #form-group .user-name,
+.registerPage .container #form-group .form-email,
+.registerPage .container #form-group .form-password,
+.registerPage .container #form-group .form-password,
+.registerPage .container #form-group .form-confirm-password,
+.registerPage .container #form-group .button-submit,
+.registerPage .container #form-group .ahref,
+.loginPage .container #form-group .user-name,
+.loginPage .container #form-group .form-email,
+.loginPage .container #form-group .form-password,
+.loginPage .container #form-group .form-password,
+.loginPage .container #form-group .form-confirm-password,
+.loginPage .container #form-group .button-submit,
+.loginPage .container #form-group .ahref {
+  padding: 1em;
+  text-align: center;
+}
+.registerPage .container #form-group .email-lr,
+.registerPage .container #form-group .pass-lr,
+.registerPage .container #form-group .name-r,
+.registerPage .container #form-group .confrmpass,
+.loginPage .container #form-group .email-lr,
+.loginPage .container #form-group .pass-lr,
+.loginPage .container #form-group .name-r,
+.loginPage .container #form-group .confrmpass {
+  display: block;
+  margin-left: 3em;
+  border: none;
+  padding: 0em;
+  border-bottom: 1px solid black;
+}
+.registerPage .container #form-group .message-error,
+.loginPage .container #form-group .message-error {
+  margin-top: 0;
+}
+.registerPage .container #form-group .button,
+.loginPage .container #form-group .button {
+  align-content: center;
+  padding: 1em;
+  padding-left: 5em;
+  padding-right: 5em;
+  border: none;
+  border-radius: 0.4em;
+  background-color: rgb(115, 200, 213);
+  cursor: pointer;
+}
+.registerPage .container #form-group .button:active,
+.loginPage .container #form-group .button:active {
+  background-color: rgb(15, 140, 154);
+}
+
+/*# sourceMappingURL=login-registration.css.map */

@@ -1,0 +1,137 @@
+
+  @use "../../common.scss";
+ @use "../../vars" as v;
+ @use '../../mixins/utils' as mixinUtils;
+ .add-meeting-page{
+    .add-meeting-body {
+      // margin: 5em;
+      .types-of-meeting {
+        padding: 0.5em;
+        margin: 16px 0;
+        border-bottom: 0.5px solid rgb(224, 227, 227);
+        /*box-shadow: rgb(186, 180, 180);*/
+        z-index: 0;
+
+        a {
+          text-decoration: none;
+          padding: 0.5em;
+        }
+        .filter-tab {
+          color: rgb(26, 113, 220);
+          font-weight: bold;
+        }
+      }
+
+      main {
+        width: 100%;
+
+        .form {
+          background-color: v.$form-background-color;
+          padding: 1.6em;
+          padding-left: 2em;
+          @include mixinUtils.border-radius(8px);
+          //border-radius: 0.5em;
+
+          h2 {
+            color: rgb(66, 64, 64);
+            margin-top: 0;
+          }
+          .label {
+            padding: 0.8em;
+            padding-left: 0em;
+            font-size: 20px;
+            /*font-weight: 900px;*/
+          }
+          .date {
+            width: 100%;
+            font-size: 19.2px;
+            padding: 0.5em;
+            border-radius: 6.5px;
+            border: 2px solid rgb(186, 180, 180);
+          }
+          .input {
+            padding-bottom: 1em;
+            .start-time {
+              padding: 0.8em;
+              width: 64px;
+              border: 2px solid rgb(186, 180, 180);
+              @include mixinUtils.border-radius;
+              //border-radius: 6px;
+            }
+            #description {
+              width: 100%;
+              padding: 1em;
+              padding-left: 0;
+              height: 80px;
+              @include mixinUtils.border-radius;
+              border: 2px solid rgb(186, 180, 180);
+            }
+            #email {
+              width: 100%;
+              @include mixinUtils.border-radius;
+              //border-radius: 0.4em;
+              border: 2px solid rgb(186, 180, 180);
+              padding: 1em;
+              padding-left: 0;
+            }
+            #button {
+              width: auto;
+              padding: 0.7em;
+              border: none;
+              margin-top: 16px;
+              @include mixinUtils.border-radius;
+              //border-radius: 0.4em;
+              font-size: 20px;
+              background-color: v.$button-color;
+              color: white;
+              font-weight: bold;
+              cursor: pointer;
+
+              &:active {
+                background-color: v.$button-color-active;
+              }
+            }
+            #name {
+              width: 100%;
+              @include mixinUtils.border-radius(0.5em);
+              //border-radius: 8px;
+              font-size: 20px;
+              padding: 0.5em;
+              border: 2px solid rgb(186, 180, 180);
+            }
+            .email-para {
+              font-size: 14.5px;
+              color: rgb(61, 56, 56);
+              margin-top: 5px;
+            }
+          }
+        }
+      }
+      @media (min-width: v.$min-width) {
+        margin: 24px 70px;
+      }
+      .types-of-meeting .meet-active {
+        position: relative;
+        top: 0px;
+        z-index: 10;
+        border-radius: 5px 4px 5px 4px;
+        // border-top-left-radius: 5px;
+        // border-top-right-radius: 5px;
+        // border-bottom-left-radius: 4px;
+        // border-bottom-right-radius: 4px;
+        border-top: 0.5px solid rgb(224, 227, 227);
+        border-left: 0.5px solid rgb(224, 227, 227);
+        border-right: 0.5px solid rgb(224, 227, 227);
+        border-bottom: 0.5px solid white;
+        color: black;
+      }
+    }
+    // @media (min-width:812px){
+    //   margin: 5em;
+    // }
+ }
+  
+
+//   hr {
+//     border: 1px solid rgb(224, 227, 227);
+//   }

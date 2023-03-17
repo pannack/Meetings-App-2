@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SPA Meetings Page"/>
+    <title>Meetings App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../public/css/normalise.css">
+    <script src="dist/js/main.bundle.js" defer></script>
+</head>
+<body>
+
+  <div id="root"></div>
+    <template id="registration-page">
+      
+    <main class="containerLR">
+        <form
+          action="https://mymeetingsapp.herokuapp.com/api/auth/register"
+          method="post"
+          id="form-group"
+        >
+          <h1>Registration</h1>
+          <div class="inputs">
+          <div class="user-name form-input">
+            <label for="name-r">Enter Username</label>
+            <input type="text" class="name-r" id="name-r" required autocomplete="off"/>
+            <span class="message message-error"></span>
+          </div>
+  
+          <div class="form-email form-input">
+            <label for="email-lr">Enter Email</label>
+            <input type="email" class="email-lr" id="email-lr" autocomplete="off" />
+            <span class="message message-error"></span>
+          </div>
+          <div class="form-password form-input">
+            <label for="pass-lr">Enter Password</label>
+            <input type="password" class="pass-lr" id="pass-lr" />
+            <span class="message message-error"></span>
+          </div>
+  
+          <div class="form-confirm-password form-input">
+            <label for="confrmpass">Confirm Password</label>
+            <input type="password" class="confrmpass" id="confrmpass" />
+            <span class="message message-error"></span>
+          </div>
+          <div class="button-submit form-input">
+            <button type="submit" class="button">Register</button>
+          </div>
+          <div class="ahref form-input">
+            <a href="/login.html">Already registered? Login</a>
+          </div>
+        </div>
+        </form>
+      </main>
+      
+    </template>
+
+    <template id="login-page">
+      
+        <main class="containerLR">
+            <form
+              action="https://mymeetingsapp.herokuapp.com/api/auth/login"
+              method="post"
+              id="form-group"
+            >
+              <h1>Login</h1>
+              <div class="inputs">
+              <div class="form-email form-input">
+                <label for="email-lr">Enter email</label>
+                <input type="email" class="email-lr" id="email-lr" autocomplete="off" required />
+              </div>
+              <div class="form-password form-input">
+                <label for="pass-lr">Enter Password</label>
+                <input type="password" class="pass-lr" id="pass-lr" required />
+                <span class="message message-error"></span>
+              </div>
+              
+              <div class="button-submit form-input">
+                <button type="submit" class="button">Login</button>
+              </div>
+              <div class="ahref form-input">
+                <a href="/registration.html">Not registered yet? SignUp</a>
+              </div>
+              </div>
+              
+            </form>
+        </main>
+    </template>
+
+    <template id="calendar">
+      <div class="calendar-page">
+        <header>
+            <nav class="main-menu nav-bar" id="main-menu">
+              <div class="my-meetings hide-my-meetings d-lg-none">
+                <h3><span>MyMeetings</span></h3>
+                <span class="icon menu-icon">
+                  <i class="fa fa-bars"></i>
+                </span>
+              </div>
+              <div class="nav-first d-sm-none">
+               
+                  <ul class="nav list-unstyled">
+                    <li class="link">
+                      <a href="calender.html" class="active">Calendar</a>
+                    </li>
+                    <li class="link"><a href="add-meeting.html">Meetings</a></li>
+                    <li class="link"><a href="teams.html">Teams</a></li>
+                    <li class="list">Hello <span class="auth-email"></span></li>
+                    <li><a href="login.html" class="logout">Logout</a></li>
+                  </ul>
+                
+              </div>
+            </nav>
+          </header>
+
+
+          <main >
+            <h1 class="name-heading-1">Calendar</h1>
+            
+            <div class="date">
+              <div class="day">
+                <h2 id="today-date"></h2>
+                <span class="week-day" id="week-day"></span>
+              </div>
+              <div>
+                <label for="select-date" class="visually-hidden"
+                  >today's date</label
+                >
+                <input type="date" id="select-date" name="date" />
+              </div>
+            </div>
+    
+            <div class="calander">
+              <div class="hours">
+                <ul id="time-sheet">
+                  <li>
+                    <span class="hour">0</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">1</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">2</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">3</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">4</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">5</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">6</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">7</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">8</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">9</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">10</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">11</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">12</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">13</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">14</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">15</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">16</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">17</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">18</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">19</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">20</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">21</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">22</span>
+                    <span class="content"></span>
+                  </li>
+                  <li>
+                    <span class="hour">23</span>
+                    <span class="content"></span>
+                  </li>
+                </ul>
+              </div>
+    
+              <div class="meetings-container" id="meet-con"></div>
+            </div>
+            
+          </main>
+
+
+        
+        </div>    
+    </template>
+
+    <template id="add-meeting">
+      <div class="add-meeting-page">
+        <header>
+            <nav class="main-menu nav-bar" id="main-menu">
+              <div class="my-meetings hide-my-meetings d-lg-none">
+                <h3><span>MyMeetings</span></h3>
+                <span class="icon menu-icon">
+                  <i class="fa fa-bars"></i>
+                </span>
+              </div>
+              <div class="nav-first d-sm-none">
+              
+                  <ul class="nav list-unstyled">
+                    <li class="link">
+                      <a href="calender.html" name="calendar">Calendar</a>
+                    </li>
+                    <li class="link">
+                      <a href="add-meeting.html" class="active" name="meeting">Meetings</a>
+                    </li>
+                    <li class="link"><a href="teams.html" name="teams">Teams</a></li>
+                    <li class="list">Hello <span class="auth-email"></span></li>
+                    <li><a href="login.html" class="logout" name="logout">Logout</a></li>
+                  </ul>
+                </div>
+             
+            </nav>
+          </header>
+          <div class="add-meeting-body">
+            <h1 class="name-heading">Meetings</h1>
+            
+            <div class="types-of-meeting">
+              <a href="filter-meeting.html" class="filter-tab"
+                >Filter / Search a meeting</a
+              >
+              <a href="add-meeting.html" class="add-tab meet-active">Add a meeting</a>
+            </div>
+            <main class="form-body">
+              <form
+                action="https://mymeetingsapp.herokuapp.com/api/meetings"
+                method="post"
+                class="form"
+                id="form-add-meeting"
+              >
+                <h2 class="name-heading">Add a new meeting</h2>
+                
+                <div class=" date-entry">
+                  <div class="label">
+                    <label for="date">Date</label>
+                  </div>
+                  <input type="date" id="date" class="date" /><br/><br/>
+                  <span class="message message-error"></span>
+                </div>
+                <div class="input">
+                  <div class="label">
+                    <label for="start-time-hours">Start time(hh:mm)</label>
+                  </div>
+                  <select id="start-time-hours" class="hours start-time" name="hours">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    
+                  </select>
+                  :
+                  <select class="minutes start-time" name="minutes" aria-label="minutes">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option>
+                    <option value="51">51</option>
+                    <option value="52">52</option>
+                    <option value="53">53</option>
+                    <option value="54">54</option>
+                    <option value="55">55</option>
+                    <option value="56">56</option>
+                    <option value="57">57</option>
+                    <option value="58">58</option>
+                    <option value="59">59</option>
+                    <option value="60">60</option>
+                  </select>
+                  
+                </div>
+                <div class="input">
+                  <div class="label">
+                    <label for="end-time-hours">End time(hh:mm)</label>
+                  </div>
+                  <select id="end-time-hours" class="end-hours start-time" name="hours">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                  </select>
+                  :
+                  <select  class="end-minutes start-time" name="minutes" aria-label="minutes">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                    <option value="37">37</option>
+                    <option value="38">38</option>
+                    <option value="39">39</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="43">43</option>
+                    <option value="44">44</option>
+                    <option value="45">45</option>
+                    <option value="46">46</option>
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option>
+                    <option value="51">51</option>
+                    <option value="52">52</option>
+                    <option value="53">53</option>
+                    <option value="54">54</option>
+                    <option value="55">55</option>
+                    <option value="56">56</option>
+                    <option value="57">57</option>
+                    <option value="58">58</option>
+                    <option value="59">59</option>
+                    <option value="60">60</option>
+                  </select>
+                  <p class="message message-error"></p>
+                </div>
+                
+      
+                <div class="input">
+                  <div class="label">
+                    <label for="name">Meeting Name</label>
+                  </div>
+                  <input type="text" id="name" required/>
+                </div>
+                <div class="input">
+                  <div class="label">
+                    <label for="description">Description</label>
+                  </div>
+                  <textarea
+                    name="description"
+                    id="description"
+                    placeholder="What is the agenda of the meeting ?" 
+                  ></textarea>
+                </div>
+                <div class="input">
+                  <div class="label">
+                    <label for="email">EmailIDs of attendees, or team's short</label>
+                  </div>
+                  <input
+                    type="text"
+                    id="email"
+                    placeholder="john@example.com, @annual-day, mark@example.com" required
+                  />
+                  <p class="email-para">Separate emailids/team short names by commas</p>
+                </div>
+                
+                <div class="input">
+                  <button type="submit" id="button">Add meeting</button>
+                </div>
+              </form>
+            </main>
+          </div>
+        </div>
+    </template>
+
+    <template id="filter-meeting">
+      <div id="filter-meeting-page">
+        <header>
+            <nav class="main-menu nav-bar" id="main-menu">
+              <div class="my-meetings hide-my-meetings d-lg-none">
+                <h3><span>MyMeetings</span></h3>
+                <span class="icon menu-icon">
+                  <i class="fa fa-bars"></i>
+                </span>
+              </div>
+              <div class="nav-first d-sm-none">
+              
+                  <ul class="nav list-unstyled">
+                    <li class="link">
+                      <a href="calender.html">Calendar</a>
+                    </li>
+                    <li class="link">
+                      <a href="add-meeting.html" class="active">Meetings</a>
+                    </li>
+                    <li class="link"><a href="teams.html">Teams</a></li>
+                    <li class="list">Hello <span class="auth-email"></span></li>
+                    <li><a href="login.html" class="logout">Logout</a></li>
+                  </ul>
+              
+              </div>
+            </nav>
+          </header>
+          <div class="filter-meeting-body">
+            <h1 class="name-heading">Meetings</h1>
+            
+            <div class="types-of-meeting">
+              <a href="filter-meeting.html" class="filter-tab"
+                >Filter / Search a meeting</a
+              >
+              <a href="add-meeting.html" class="add-tab meet-active">Add a meeting</a>
+            </div>
+            <div class="form-body form">
+              <form class="filter-form">
+                <h2 class="name-heading">Search for meetings</h2>
+                
+                <div class="input">
+                  <div class="label">
+                    <label for="dates">Date</label>
+                  </div>
+                  <select id="dates" class="date">
+                    <option value="ALL">ALL</option>
+                    <option value="PAST">PAST</option>
+                    <option value="PRESENT">TODAY</option>
+                    <option value="FUTURE">UPCOMING</option>
+                  </select>
+                </div>
+                <div class="input">
+                  <div class="label">
+                    <label for="description">Search for</label>
+                  </div>
+                  <textarea
+                    name="description"
+                    id="description"
+                    placeholder="Search using words which describe the meeting "
+                  ></textarea>
+                </div>
+                <button type="submit" id="button" >Search meeting</button>
+              </form>
+            </div>
+            <div class="meeting-matching-search">
+              <h1 class="name-heading">Meetings matching search criteria</h1>
+              
+              <div class="search-list"></div>
+            </div>
+          </div>
+          </div>
+        </template>
+
+    <template id="teams">
+      <div class="teams-page">
+        <header>
+            <nav class="main-menu nav-bar" id="main-menu">
+              <div class="my-meetings hide-my-meetings d-lg-none">
+                <h3>MyMeetings</h3>
+                <span class="icon menu-icon">
+                  <i class="fa fa-bars"></i>
+                </span>
+              </div>
+              <div class="nav-first d-sm-none">
+                
+                  <ul class="nav list-unstyled">
+                    <li class="link">
+                      <a href="calender.html">Calendar</a>
+                    </li>
+                    <li class="link"><a href="add-meeting.html">Meetings</a></li>
+                    <li class="link">
+                      <a href="teams.html" class="active">Teams</a>
+                    </li>
+                    <li class="list">Hello <span class="auth-email"></span></li>
+                    <li><a href="login.html" class="logout">Logout</a></li>
+                  </ul>
+              
+              </div>
+            </nav>
+          </header>
+          <main>
+            <h1 class="name-heading">Teams</h1>
+            
+            <h2 class="heading">View and edit teams you are part of</h2>
+            <div class="meetings-list">
+              
+                <button class="team-plus" aria-label="Adding a team">
+                  <i class="fa fa-plus"></i>
+                  </button>
+                <div class="meetings hide-form">
+                  <form
+                    action="https://mymeetingsapp.herokuapp.com/api/teams"
+                    method="post"
+                    class="form"
+                  >
+                    <div class="add-team name-heading">
+                      <div class="team-name-add">
+                        <label for="team-name" class="visually-hidden">Team Name</label>
+                        <input
+                          type="text"
+                          class="team-name"
+                          id="team-name"
+                          placeholder="Team name"
+                          autocomplete="off" 
+                        />
+                        <span class="message message-error"></span>
+                      </div>
+                      <div class="team-short-name-add">
+                        <label for="team-short-name" class="visually-hidden">Team Short Name</label>
+                        <input
+                          type="text"
+                          class="team-short-name"
+                          id="team-short-name"
+                          placeholder="Team short name" required
+                        />
+                        <span class="message message-error"></span>
+                      </div>
+                      <div class="team-description-add">
+                        <label for="team-description" class="visually-hidden" >Description of the team</label>
+                        <textarea
+                          id="team-description"
+                          class="team-description"
+                          rows="3"
+                          placeholder="Provide a description for the team" required
+                        ></textarea>
+                      </div>
+                    </div>
+                    <div class="members">
+                      <p class="member">
+                        <strong>Members :</strong>
+                      </p>
+                    </div>
+                    <div class="member-selection">
+                      <select class="team-select member-select" aria-label="Selecting a member">
+                        <option value="">Select member</option>
+                      </select>
+                      <button type="submit" class="add">Add</button>
+                    </div>
+                    <div>
+                      <button type="submit" class="add team-add-btn">Add team</button>
+                    </div>
+                  </form>
+                
+              </div>
+              </div>
+              </main>
+            </div>
+    </template>   
+    <template id="page-not-found">
+      <h1>Page not found</h1>
+      <hr />
+      Try going <a href="./login.html">Login</a>
+  </template> 
+</body>
+</html>

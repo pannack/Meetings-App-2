@@ -1,0 +1,174 @@
+@use  "../../common.scss";
+@use '../../mixins//utils' as mixinUtils;
+@use "../../vars" as v;
+.filter-meeting-body {
+   margin: 20px;
+  .types-of-meeting {
+    padding: 0.5em;
+    margin: 16px 0;
+    border-bottom: 0.5px solid rgb(224, 227, 227);
+    /*box-shadow: rgb(186, 180, 180);*/
+    z-index: 0;
+
+    a {
+      text-decoration: none;
+      padding: 0.5em;
+    }
+    .add-tab {
+      color: rgb(26, 113, 220);
+      font-weight: bold;
+    }
+  }
+
+  .form {
+    background-color: v.$form-background-color;
+    padding: 1.6em;
+    padding-left: 2em;
+    @include mixinUtils.border-radius(8px);
+    //border-radius: 0.5em;
+
+    h2 {
+      color: rgb(66, 64, 64);
+      margin-top: 0;
+    }
+    .input {
+      padding-bottom: 1em;
+      .label {
+        padding: 0.8em;
+        padding-left: 0em;
+        font-size: 20px;
+        /*font-weight: 900px;*/
+      }
+      .date {
+        width: 100%;
+        font-size:20px;
+        padding: 0.5em;
+        @include mixinUtils.border-radius;
+        //border-radius: 0.4em;
+        border: 2px solid rgb(186, 180, 180);
+      }
+
+      #description {
+        width: 100%;
+        padding: 1em;
+        padding-left: 0;
+        height: 80px;
+        @include mixinUtils.border-radius;
+        //border-radius: 0.4em;
+        border: 2px solid rgb(186, 180, 180);
+      }
+    }
+    #button {
+      width: auto;
+      padding: 0.7em;
+      border: none;
+      margin-top: 16px;
+      @include mixinUtils.border-radius;
+      //border-radius: 0.4em;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: v.$button-color;
+      color: white;
+      cursor: pointer;
+      &:active {
+        background-color: v.$button-color-active;
+      }
+    }
+  }
+  @media (min-width: 812px) {
+    margin: 24px 70px;
+  }
+  .types-of-meeting .filter-tab {
+    position: relative;
+    top: 0;
+    z-index: 1;
+    border-radius: 5px 4px 5px 4px;
+    // border-top-left-radius: 5px;
+    // border-top-right-radius: 5px;
+    // border-bottom-left-radius: 4px;
+    // border-bottom-right-radius: 4px;
+
+    border-top: 0.5px solid rgb(224, 227, 227);
+    border-left: 0.5px solid rgb(224, 227, 227);
+    border-right: 0.5px solid rgb(224, 227, 227);
+    border-bottom: 0.5px solid white;
+    z-index: 10;
+    color: black;
+  }
+  .meeting-matching-search {
+    margin-top: 16px;
+
+    /*--------- for filtered display meeting--------------*/
+.display-meeting {
+    border: 2px solid lightgray;
+    @include mixinUtils.border-radius;
+    //border-radius: 0.4em;
+    margin: 16px 0;
+    /* margin-left: 0px;
+    margin-right: 0px; */
+    padding: 1.5em;
+    .display-team-name,
+    .display-team-short-name {
+      margin: 8px 0;
+      color: black;
+    }
+  
+    .excuse {
+      padding: 0.7em 1em;
+      /* padding-left: 1em;
+    padding-right: 1em; */
+      font-size: 20px;
+      @include mixinUtils.border-radius;
+      //border-radius: 0.4em;
+      border: none;
+      background-color: v.$button-excuse;
+      color: white;
+      margin: 16px;
+      margin-left: 0;
+      margin-bottom: 8px;
+      &:active {
+        background-color: v.$button-excuse-active;
+      }
+    }
+    .attendees {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+    select {
+      padding: 0.25em;
+      font-size:18px;
+      @include mixinUtils.border-radius;
+      //border-radius: 0.4em;
+      border: 2px solid rgb(186, 180, 180);
+      margin-right: 5px;
+      width: 81%;
+  
+      @media (min-width: 812px) {
+        width: auto;
+      }
+    }
+  
+    #add {
+      width: 48px;
+      padding: 0.4em;
+      border: none;
+      margin-top: 8px;
+      @include mixinUtils.border-radius;
+      //border-radius: 0.4em;
+      font-size: 20px;
+      background-color: v.$button-color;
+      color: white;
+      cursor: pointer;
+      &:active {
+        background-color: v.$button-color-active;
+      }
+    }
+  }
+  
+  }
+}
+
+//   hr {
+//     border: 1px solid rgb(224, 227, 227);
+//   }
+

@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: rgb(171, 168, 168);
+  opacity: 1;
+  padding-left: 1em;
+}
+
+.visually-hidden {
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.list-unstyled {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.d-sm-none {
+  display: none;
+}
+
+.d-lg-none {
+  display: auto;
+}
+
+.add-meeting-body {
+  margin: 1.5em;
+}
+
+.message {
+  color: red;
+  margin-bottom: 0;
+}
+
+.name-heading {
+  margin: 0.5em 0;
+  padding-bottom: 1em;
+  border-bottom: 1px solid lightgray;
+}
+
+@media (min-width: 812px) {
+  .d-sm-none {
+    display: inline;
+  }
+  .d-lg-none {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=utils.css.map */

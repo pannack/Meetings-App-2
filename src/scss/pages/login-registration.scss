@@ -1,0 +1,78 @@
+// padding: 1em;
+
+// div {
+//   padding: 1em;
+//   text-align: center;
+// }
+
+  
+  // background-repeat: no-repeat;
+  @use '../vars' as v;
+  @use '../mixins/utils' as mixinUtils;
+  .containerLR {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    #form-group {
+      width: 20em;
+      margin-top: 2em;
+      border: 3px solid v.$form-background-color;
+      @include mixinUtils.border-radius(0.5em);
+      //border-radius: 0.5em;
+      padding: 0%;
+      background-color: rgba(255, 255, 255, 1);
+
+      h1 {
+        background-color: v.$form-background-color;
+        padding: 0.5em;
+        margin: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        text-align: center;
+      }
+      .form-input {
+        padding: 1em;
+        margin-left: 3em;
+      }
+      .inputs{
+        padding: 1em;
+      }
+      
+
+      .email-lr,
+      .pass-lr,
+      .name-r,
+      .confrmpass {
+        // display: flex;
+        // align-items: center;
+        // margin: 1em
+        display: block;
+        //margin: 10px 50px;
+        border: none;
+        border-bottom: 1px solid black;
+        
+      }
+
+      .message-error {
+        margin-top: 0;
+      }
+      .button {
+        align-content: center;
+        padding: 1em 4.3em;
+        border: none;
+        @include mixinUtils.border-radius;
+        //border-radius: 0.4em;
+        background-color: v.$form-background-color;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 14px;
+
+        &:active {
+          background-color: v.$button-color-active;
+        }
+      }
+    }
+  }
+  
+
